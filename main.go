@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "net-toolbox/cmd"
+import "github.com/ncolesummers72/net-toolbox/cmd"
 
 func main() {
 	cmd.Execute()

@@ -1,5 +1,6 @@
 # Net Toolbox
-Net Toolbox exists to bundle some of my common networking tools into a single binary
+
+Net Toolbox exists to bundle some of my common networking tools into a single binary.  Code is pre-release and subject to large changes.
 
 ## Commands
 
@@ -8,3 +9,4 @@ Net Toolbox exists to bundle some of my common networking tools into a single bi
 - MX Lookup
 - CNAME Lookup
 - OUI Lookup
+- myip Lookup (both private and public)
