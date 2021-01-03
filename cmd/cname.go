@@ -17,6 +17,8 @@ package cmd
 
 import (
 	"fmt"
+	"log"
+	"net"
 
 	"github.com/spf13/cobra"
 )
@@ -24,15 +26,18 @@ import (
 // cnameCmd represents the cname command
 var cnameCmd = &cobra.Command{
 	Use:   "cname",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Looks up the CNAME for a host",
+	Long: `A means to look up a Canonical Name or CNAME record. CNAME records are typically used to map a subdomain such as www or mail to the domain hosting that subdomain's content.  
+	Usage: net-toolbox cname host`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("cname called")
+		for _, arg := range args {
+			fmt.Println("Getting CNAME records for:", arg)
+			cname, err := net.LookupCNAME(arg)
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Println(cname)
+		}
 	},
 }
 

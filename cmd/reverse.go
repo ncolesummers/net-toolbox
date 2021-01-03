@@ -24,7 +24,7 @@ import (
 // reverseCmd represents the reverse command
 var reverseCmd = &cobra.Command{
 	Use:   "reverse",
-	Short: "A brief description of your command",
+	Short: "Reverse IP Lookup",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
